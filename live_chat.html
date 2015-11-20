@@ -1,0 +1,33 @@
+<head>
+  <title>live_chat</title>
+</head>
+
+<body>
+  {{>messages}}
+</body>
+
+<template name="messages">
+	{{> loginButtons align="right"}}
+
+ <ul>
+ 	{{#each messages}}
+ 		{{> message}}
+	{{/each}}
+ </ul>
+
+ <form>
+ 	<textarea rows="1" cols="100"></textarea>
+ </form>
+</template>
+
+<template name="message">
+	<li>
+		<img src="{{user.profile}}"/>
+		<div class="message-header">
+			{{user.username}} <span class="time">{{time}}</span>
+		</div>
+		<div class="message-content">
+			{{message}}
+		</div>
+	</li>
+</template>
